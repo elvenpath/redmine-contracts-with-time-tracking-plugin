@@ -12,9 +12,16 @@ match 'projects/:project_id/contracts/:id'                  => 'contracts#show',
 match 'projects/:project_id/contracts'                      => 'contracts#create',  :via => :post
 match 'projects/:project_id/contracts/:id'                  => 'contracts#update',  :via => :put
 match 'projects/:project_id/contracts/:id'                  => 'contracts#destroy', :via => :delete
+match 'projects/:project_id/contracts/:id/lock'          	=> 'contracts#lock', :via => :put
 match 'projects/:project_id/contracts/:id/add_time_entries' => 'contracts#add_time_entries', :via => :get
 match 'projects/:project_id/contracts/:id/assoc_time_entries_with_contract' => 
         'contracts#assoc_time_entries_with_contract', 
         :via => :put
 
+# Expenses
+match 'projects/:project_id/expenses/new'                   => 'expenses#new',   :via => :get
+match 'projects/:project_id/expenses/:id/edit'              => 'expenses#edit',   :via => :get
+match 'projects/:project_id/expenses/create'                => 'expenses#create',   :via => :post
+match 'projects/:project_id/expenses/update/:id'            => 'expenses#update',   :via => :put
+match 'projects/:project_id/expenses/destroy/:id'           => 'expenses#destroy',   :via => :delete
 
